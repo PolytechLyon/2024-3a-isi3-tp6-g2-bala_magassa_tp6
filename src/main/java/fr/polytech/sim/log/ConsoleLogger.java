@@ -4,7 +4,7 @@ package fr.polytech.sim.log;
 /**
  * Console logger.
  */
-public class ConsoleLogger extends NamedLogger {
+class ConsoleLogger extends NamedLogger {
 
     /**
      * Constructor.
