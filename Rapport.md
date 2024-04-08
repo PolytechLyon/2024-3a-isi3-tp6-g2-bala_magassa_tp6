@@ -44,6 +44,12 @@ Après la mise en place du pattern, toutes les roues ont la même vélocité :
 
 ## Exercice 4
 
+Les classes Bike et Wheel n'appartiennent pas au même paquetage. En effet, la classe Bike est située dans le paquetage "cycling" tandis que la classe Wheel se trouve dans le paquetage "transport".
+En observant, le diagramme de classe fourni, on constate que le type de dépendance entre ces 2 classes est circulaire. Effectivement, Bike est une sous-classe de Vehicule qui implémente l'interface MobileObject. D'autre part, la classe Wheel implémente également cette interface et possède une donnée membre privée de type Bike.
+Cette dépendance cyclique ne respecte pas les bonnes pratiques de conception, car toute modification apportée à l'un des paquetages est susceptible d'avoir un impact inattendu sur l'autre. Par conséquent, il est recommandé de regrouper les classes Bike et Wheel dans le même paquetage afin d'éviter ce problème.
+
+
+
 ## Exercice 5
 
 ## Exercice 6
