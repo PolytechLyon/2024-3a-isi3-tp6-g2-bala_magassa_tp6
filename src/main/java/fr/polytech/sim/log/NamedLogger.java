@@ -4,7 +4,7 @@ package fr.polytech.sim.log;
  * Name logger that is supposed to log its name along with each log entry, to
  * facilitate tracing.
  */
-public abstract class NamedLogger implements Logger {
+abstract class NamedLogger implements Logger {
     final protected String name;
 
     /**
