@@ -17,7 +17,15 @@ hérite des méthodes de Vehicle, notamment getMass() et getVelocity(). Il n'est
 
 ## Exercice 2
 
+La getVelocity() utilise le patron de conception Iterateur, permettant de parcourir les composants d'un véhicule. L'avantage de ce patron de conception est que le client peut parcourir notre collection d'objects  sans connaitre l'implémentation de cette dernière. De plus, l'encapsulation de l'itérateur protège le client des éventuelles variations de l'implémentation de la collection.
+
+Après avoir modifié la structure de donnée utilisée pour stocker les composants d'un véhicule de Set à List, il n'est pas nécessaire de modifier la réalisation de la méthode getVelocity() puisque le patron de 
+conception itérateur protège le client des éventuelles variations de l'implémentation de la collection.
+
 ## Exercice 3
+
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/160489283/13d7085f-17d3-4be9-a987-c491d369cef2)
+
 
 ## Exercice 4
 
