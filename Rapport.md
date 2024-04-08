@@ -65,6 +65,12 @@ la méthode log(), et dont l'implémentation dépend donc de la classe fille qui
 
 ## Exercice 6
 
+Conformément au patron de conception Méthode de Fabrique, nous créons une classe LoggerCreator, qui correspond à notre usine à Logger.
+
+Cette classe admet donc une méthode factoryMethod, qui renvoie un "produit" de type Logger. En déclarant cette méthode comme statique, nous décidons d'adopter la variante statique du design pattern Factory. De plus, factoryMethod renvoie par défaut un objet de type FileLogger. De cette manière, le choix du type de logger est centralisé dans un seul et unique fichier : celui de la classe LoggerCreator. Les classes BikeSimulator, Bike et Vehicle peuvent créer leur logger via "LoggerCreator.factoryMethod(this.getClass().toString())".
+
+Par la suite, nous modifions la visibilité des classes de loggers (ConsoleLogger, FileLogger...) afin qu'elles soient accessible uniquement au sein de leurs packages respectifs. De ce fait, nous interdisons à l'utlisateur de créer des instances de logger d'un autre type que FileLogger, et par un autre intermédiaire que notre méthode de fabrique.
+
 ## Exercice 7
 
 ## Exercice 8
