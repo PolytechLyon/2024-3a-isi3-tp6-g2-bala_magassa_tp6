@@ -48,6 +48,10 @@ Les classes Bike et Wheel n'appartiennent pas au même paquetage. En effet, la c
 En observant, le diagramme de classe fourni, on constate que le type de dépendance entre ces 2 classes est circulaire. Effectivement, Bike est une sous-classe de Vehicule qui implémente l'interface MobileObject. D'autre part, la classe Wheel implémente également cette interface et possède une donnée membre privée de type Bike.
 Cette dépendance cyclique ne respecte pas les bonnes pratiques de conception, car toute modification apportée à l'un des paquetages est susceptible d'avoir un impact inattendu sur l'autre. Par conséquent, il est recommandé de regrouper les classes Bike et Wheel dans le même paquetage afin d'éviter ce problème.
 
+La fonctionnalité de la classe Bike, utilisée par la classe Wheel, est la fonction getPush(). La classe abstraite Vehicle est une abstraction existante de la classe Bike qui isole cette fonctionnalité. Cette abstraction se trouve dans le paquetage "transport", tout comme la classe Wheel. 
+
+Afin de rompre la dépendance cyclique entre les classes Bike et Wheel, nous avons modifié le type de la donnée membre "drive" de la classe Wheel pour qu'elle soit de type Vehicle plutôt que Bike. De plus, nous avons supprimé l'import de la classe Bike dans la classe Wheel.
+
 ## Exercice 5
 
 On constate que les méthodes log() sont constituées de trois étapes :
