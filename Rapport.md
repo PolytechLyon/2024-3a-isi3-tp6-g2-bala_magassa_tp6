@@ -48,9 +48,16 @@ Les classes Bike et Wheel n'appartiennent pas au même paquetage. En effet, la c
 En observant, le diagramme de classe fourni, on constate que le type de dépendance entre ces 2 classes est circulaire. Effectivement, Bike est une sous-classe de Vehicule qui implémente l'interface MobileObject. D'autre part, la classe Wheel implémente également cette interface et possède une donnée membre privée de type Bike.
 Cette dépendance cyclique ne respecte pas les bonnes pratiques de conception, car toute modification apportée à l'un des paquetages est susceptible d'avoir un impact inattendu sur l'autre. Par conséquent, il est recommandé de regrouper les classes Bike et Wheel dans le même paquetage afin d'éviter ce problème.
 
-
-
 ## Exercice 5
+
+On constate que les méthodes log() sont constituées de trois étapes :
+1. La création de la variable "entry" à partir du format
+2. La fabrication du message final à partir de nom du journal, du format et des arguments du message
+3. L'écriture du message, dans la console ou dans un fichier en fonction du type de Logger (ConsoleLogger ou FileLogger)
+
+Les deux premières étapes étant communes à ConsoleLogger et FileLogger, nous les incluons dans le templateMethod (qui dans notre cas est la méthode log)
+La dernière étape varie selon le type de Logger. Nous créeons donc une méthode abstraite operationLog(String message), qui est appelée par la méthode log() après 
+la méthode log(), et dont l'implémentation dépend donc de la classe fille qui exécute log().
 
 ## Exercice 6
 
