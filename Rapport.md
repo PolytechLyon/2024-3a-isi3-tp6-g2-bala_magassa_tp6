@@ -44,7 +44,24 @@ Après la mise en place du pattern, toutes les roues ont la même vélocité :
 
 ## Exercice 4
 
+Les classes Bike et Wheel n'appartiennent pas au même paquetage. En effet, la classe Bike est située dans le paquetage "cycling" tandis que la classe Wheel se trouve dans le paquetage "transport".
+En observant, le diagramme de classe fourni, on constate que le type de dépendance entre ces 2 classes est circulaire. Effectivement, Bike est une sous-classe de Vehicule qui implémente l'interface MobileObject. D'autre part, la classe Wheel implémente également cette interface et possède une donnée membre privée de type Bike.
+Cette dépendance cyclique ne respecte pas les bonnes pratiques de conception, car toute modification apportée à l'un des paquetages est susceptible d'avoir un impact inattendu sur l'autre. Par conséquent, il est recommandé de regrouper les classes Bike et Wheel dans le même paquetage afin d'éviter ce problème.
+
+La fonctionnalité de la classe Bike, utilisée par la classe Wheel, est la fonction getPush(). La classe abstraite Vehicle est une abstraction existante de la classe Bike qui isole cette fonctionnalité. Cette abstraction se trouve dans le paquetage "transport", tout comme la classe Wheel. 
+
+Afin de rompre la dépendance cyclique entre les classes Bike et Wheel, nous avons modifié le type de la donnée membre "drive" de la classe Wheel pour qu'elle soit de type Vehicle plutôt que Bike. De plus, nous avons supprimé l'import de la classe Bike dans la classe Wheel.
+
 ## Exercice 5
+
+On constate que les méthodes log() sont constituées de trois étapes :
+1. La création de la variable "entry" à partir du format
+2. La fabrication du message final à partir de nom du journal, du format et des arguments du message
+3. L'écriture du message, dans la console ou dans un fichier en fonction du type de Logger (ConsoleLogger ou FileLogger)
+
+Les deux premières étapes étant communes à ConsoleLogger et FileLogger, nous les incluons dans le templateMethod (qui dans notre cas est la méthode log)
+La dernière étape varie selon le type de Logger. Nous créeons donc une méthode abstraite operationLog(String message), qui est appelée par la méthode log() après 
+la méthode log(), et dont l'implémentation dépend donc de la classe fille qui exécute log().
 
 ## Exercice 6
 
