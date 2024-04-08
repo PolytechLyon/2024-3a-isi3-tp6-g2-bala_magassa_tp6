@@ -75,7 +75,8 @@ Cette classe admet donc une méthode factoryMethod, qui renvoie un "produit" de 
 Par la suite, nous modifions la visibilité des classes de loggers (ConsoleLogger, FileLogger...) afin qu'elles soient accessible uniquement au sein de leurs packages respectifs. De ce fait, nous interdisons à l'utlisateur de créer des instances de logger d'un autre type que FileLogger, et par un autre intermédiaire que notre méthode de fabrique.
 
 ## Exercice 7
-
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/affd259b-5b00-4ad6-8f01-79d4da452035)
+TODO concaténer l'heure
 ## Exercice 8
 
 ## Exercice 9
