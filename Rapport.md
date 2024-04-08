@@ -71,12 +71,15 @@ Cette classe admet donc une méthode factoryMethod, qui renvoie un "produit" de 
 
 ![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/8e3f8c16-ff55-4adf-b80b-351662ad83b7)
 
-
 Par la suite, nous modifions la visibilité des classes de loggers (ConsoleLogger, FileLogger...) afin qu'elles soient accessible uniquement au sein de leurs packages respectifs. De ce fait, nous interdisons à l'utlisateur de créer des instances de logger d'un autre type que FileLogger, et par un autre intermédiaire que notre méthode de fabrique.
 
+La différence entre cette conception et le patron Singleton réside dans le fait que Singleton garantit une unique instance, tandis que notre méthode de fabrique, bien qu'elle soit statique, permet de créer autant d'instances que le nombre de fois où elle est appelée dans le code.
+
 ## Exercice 7
+-------- TODO concaténer l'heure avec le paramètre ------------
+
 ![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/affd259b-5b00-4ad6-8f01-79d4da452035)
-TODO concaténer l'heure
+
 ## Exercice 8
 
 ## Exercice 9
