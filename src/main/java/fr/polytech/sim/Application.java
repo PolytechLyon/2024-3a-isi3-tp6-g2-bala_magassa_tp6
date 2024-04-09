@@ -13,9 +13,11 @@ public class Application {
      * @param args  app's arguments.
      */
     public static void main(String... args) {
+
+        System.out.println("Lancement de la simulation dans le fichier de logs...");
         new BikeSimulator().run();
 
-        // Test des fonctions getVelocity et getMass de la classe TagAlongBike
+        System.out.println("Test des fonctions getVelocity et getMass de la classe TagAlongBike :");
         TagAlongBike tagAlongBike = new TagAlongBike();
         System.out.println("Velocité de tagAlongBike : " + tagAlongBike.getVelocity());    
         System.out.println("Masse de tagAlongBike : " + tagAlongBike.getMass());    

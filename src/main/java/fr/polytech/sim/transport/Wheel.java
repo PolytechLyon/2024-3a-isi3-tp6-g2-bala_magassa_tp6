@@ -15,7 +15,7 @@ public class Wheel implements MobileObject {
     private static final double DEFAULT_MASSE = 10;
 
     private final Logger basicLogger = LoggerCreator.factoryMethod(this.getClass().toString());
-    private final TimestampedLoggerDecorator logger = new TimestampedLoggerDecorator(basicLogger, this.getClass().toString());
+    private final TimestampedLoggerDecorator logger = new TimestampedLoggerDecorator(basicLogger);
     private final Clock clock = Clock.getInstance();
     private final Bike drive;
 
@@ -34,7 +34,7 @@ public class Wheel implements MobileObject {
         final double acceleration = this.drive.getPush() / this.getMass();
         final int time = this.clock.getTime();
         double velocity = time * acceleration;
-        this.logger.log("Velocity %.2f Km/h at T %d s.", velocity, time);
+        this.logger.log("%s", "Velocity " + velocity + " Km/h at " + time + " s.");
         return velocity;
     }
 
