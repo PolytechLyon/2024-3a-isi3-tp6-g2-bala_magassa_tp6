@@ -76,13 +76,22 @@ Par la suite, nous modifions la visibilité des classes de loggers (ConsoleLogge
 La différence entre cette conception et le patron Singleton réside dans le fait que Singleton garantit une unique instance, tandis que notre méthode de fabrique, bien qu'elle soit statique, permet de créer autant d'instances que le nombre de fois où elle est appelée dans le code.
 
 ## Exercice 7
-Nous utilisons le design pattern Decorateur en créant une classe LoggerDecorator, qui hérite de Logger (et ainsi de la méthode log), mais possède également un attribut de type Logger, qui correspond au composant. Ce composant est décoré par TimestampedLoggerDecorator, décorateur concret qui ajoute la date et l'heure au message. Nous modifions la classe wheel afin qu'elle utilise ce dernier. Voici le résultat obtenu dans le fichier de logs pour Wheel :
+Nous utilisons le design pattern Decorateur en créant une classe LoggerDecorator, qui hérite de Logger (et ainsi de la méthode log), mais possède également un attribut de type Logger, qui correspond au composant. Ce composant est décoré par TimestampedLoggerDecorator, décorateur concret qui ajoute la date et l'heure au message. Nous modifions la classe wheel afin qu'elle utilise ce dernier. Voici le résultat obtenu dans le fichier logs.txt pour Wheel :
 
-![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/7f11d61f-a8d0-4568-8fad-4c8e6056418d)
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/5ed79224-f66b-4274-8a73-c2bbeb1dea22)
 
 En implémentant le design pattern avec le type Logger, à savoir le plus haut niveau d'abstraction, nous garantissons la possibilité de pouvoir écrire dans n'importe quel type de journaux (fichiers, console...).
 
 ## Exercice 8
+
+En proposant une interface simplifiée de ServiceLoader avec un ensemble restreint de ses fonctionnalités, la classe Context suit le patron de conception Facade. En effet, elle constitue un point d'entrée unique et simplifié vers un système plus complexe (ServiceLoader), dans le but de suivre le principe "make simple tasks simple, complex tasks possible". En effet, grâce à la classe Context, on peut utiliser les fonctionnalités de ServiceLoader dont on a besoin, de facon simple et transparente.
+
+Au lieu d'instancier un objet Bike via new, on utilise la classe Context afin d'effectuer une injection de dépendance permettant d'instancier un objet de type Bike. Après avoir modifié le fichier fr.polytech.sim.cycling.Bike comme convenu, on constate dans notre fichiers de logs que la simulation a bien été effectuée avec une instance de TagAlongBike (les lignes intermédiaires correspondent aux logs effectués par les autres classes de l'application, telles que Wheel par exemple) :
+
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/3b29f393-4b26-4f40-9229-44a4d75f1085)
+
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/eacc847f-eb70-44c3-9a66-f02554d633f1)
+
 
 ## Exercice 9
 
