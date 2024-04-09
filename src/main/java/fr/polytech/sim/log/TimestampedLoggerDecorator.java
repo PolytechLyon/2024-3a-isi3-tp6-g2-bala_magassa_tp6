@@ -1,7 +1,9 @@
 package fr.polytech.sim.log;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class TimestampedLoggerDecorator extends LoggerDecorator {
 
@@ -12,11 +14,10 @@ public class TimestampedLoggerDecorator extends LoggerDecorator {
         this.component = component;
     }
 
-
     @Override
     public void log(String format, Object... args) {
-        component.log(format, args);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        component.log(dtf.format(LocalDateTime.now()));
+        String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        // On décore le message du log en y ajoutant la date et l'heure
+        component.log(String.format("[%s] - %s", date, String.format("%s", args)));
     }
 }

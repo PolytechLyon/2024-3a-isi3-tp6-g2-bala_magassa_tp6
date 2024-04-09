@@ -6,7 +6,6 @@ public abstract class LoggerDecorator implements Logger {
 
     public LoggerDecorator(String name) {
         super();
-
         this.name = name;
     }
 }
