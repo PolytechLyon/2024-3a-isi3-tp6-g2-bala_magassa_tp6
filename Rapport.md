@@ -84,14 +84,15 @@ En implémentant le design pattern avec le type Logger, à savoir le plus haut n
 
 ## Exercice 8
 
-En proposant une interface simplifiée de ServiceLoader avec un ensemble restreint de ses fonctionnalités, la classe Context suit le patron de conception Facade. En effet, elle constitue un point d'entrée unique et simplifié vers un système plus complexe (ServiceLoader), dans le but de suivre le principe "make simple tasks simple, complex tasks possible". En effet, grâce à la classe Context, on peut utiliser les fonctionnalités de ServiceLoader dont on a besoin, de facon simple et transparente.
+En proposant une interface simplifiée de ServiceLoader avec un ensemble restreint de ses fonctionnalités, la classe Context suit le patron de conception Facade. En effet, elle constitue un point d'entrée unique et simplifié vers un système plus complexe (ServiceLoader), dans le but de suivre le principe "make simple tasks simple, complex tasks possible". Ainsi, grâce à la classe Context, on peut utiliser les fonctionnalités de ServiceLoader dont on a besoin, de facon simple et transparente.
 
-Au lieu d'instancier un objet Bike via new, on utilise la classe Context afin d'effectuer une injection de dépendance permettant d'instancier un objet de type Bike. Après avoir modifié le fichier fr.polytech.sim.cycling.Bike comme convenu, on constate dans notre fichiers de logs que la simulation a bien été effectuée avec une instance de TagAlongBike (les lignes intermédiaires correspondent aux logs effectués par les autres classes de l'application, telles que Wheel par exemple) :
+Au lieu d'instancier un objet Bike via new, on utilise la classe Context afin d'effectuer une injection de dépendance permettant d'instancier un objet de type Bike. Après avoir modifié le fichier `META-INF/services/fr.polytech.sim.cycling.Bike` comme convenu, on constate dans notre fichiers de logs que la simulation a bien été effectuée avec une instance de TagAlongBike (les lignes intermédiaires correspondent aux logs effectués par les autres classes de l'application, telles que Wheel par exemple) :
 
 ![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/3b29f393-4b26-4f40-9229-44a4d75f1085)
 
-![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/eacc847f-eb70-44c3-9a66-f02554d633f1)
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/57eea4bb-4cad-4d16-9a87-22c21a56a1ea)
 
+Il est tout à fait possible de mettre plusieurs lignes au fr.polytech.sim.cycling.Bike, qui correspondent aux différentes implémentations de Bike que l'on souhaite injecter à travers le contexte applicatif. La classe Context utilise alors la méthode iterator() du ServiceLoader pour obtenir un itérateur sur toutes les classes spécifiées dans le fichier.
 
 ## Exercice 9
 
