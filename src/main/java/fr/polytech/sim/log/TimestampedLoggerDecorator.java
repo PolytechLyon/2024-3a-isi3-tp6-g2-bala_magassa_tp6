@@ -10,7 +10,6 @@ public class TimestampedLoggerDecorator extends LoggerDecorator {
     private Logger component;
 
     public TimestampedLoggerDecorator(Logger component, String name) {
-        super(name);
         this.component = component;
     }
 

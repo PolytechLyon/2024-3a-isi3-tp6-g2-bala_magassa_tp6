@@ -14,8 +14,8 @@ import java.util.Objects;
 public class Wheel implements MobileObject {
     private static final double DEFAULT_MASSE = 10;
 
-    private final Logger fileLogger = LoggerCreator.factoryMethod(this.getClass().toString());
-    private final TimestampedLoggerDecorator logger = new TimestampedLoggerDecorator(fileLogger, this.getClass().toString());
+    private final Logger basicLogger = LoggerCreator.factoryMethod(this.getClass().toString());
+    private final TimestampedLoggerDecorator logger = new TimestampedLoggerDecorator(basicLogger, this.getClass().toString());
     private final Clock clock = Clock.getInstance();
     private final Bike drive;
 
