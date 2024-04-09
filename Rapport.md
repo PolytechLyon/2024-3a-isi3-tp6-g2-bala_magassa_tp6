@@ -76,9 +76,11 @@ Par la suite, nous modifions la visibilité des classes de loggers (ConsoleLogge
 La différence entre cette conception et le patron Singleton réside dans le fait que Singleton garantit une unique instance, tandis que notre méthode de fabrique, bien qu'elle soit statique, permet de créer autant d'instances que le nombre de fois où elle est appelée dans le code.
 
 ## Exercice 7
--------- TODO concaténer l'heure avec le paramètre ------------
+Nous utilisons le design pattern Decorateur en créant une classe LoggerDecorator, qui hérite de Logger (et ainsi de la méthode log), mais possède également un attribut de type Logger, qui correspond au composant. Ce composant est décoré par TimestampedLoggerDecorator, décorateur concret qui ajoute la date et l'heure au message. Nous modifions la classe wheel afin qu'elle utilise ce dernier. Voici le résultat obtenu dans le fichier de logs pour Wheel :
 
-![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/affd259b-5b00-4ad6-8f01-79d4da452035)
+![image](https://github.com/PolytechLyon/2024-3a-isi3-tp6-g2-bala_magassa_tp6/assets/145548135/7f11d61f-a8d0-4568-8fad-4c8e6056418d)
+
+En implémentant le design pattern avec le type Logger, à savoir le plus haut niveau d'abstraction, nous garantissons la possibilité de pouvoir écrire dans n'importe quel type de journaux (fichiers, console...).
 
 ## Exercice 8
 
